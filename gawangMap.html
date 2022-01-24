@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gawang Map</title>
+        <style>
+            footer {
+                display: flex;
+                justify-content: center;
+                padding: 1px;
+                background-color: #45a1ff;
+                color: #fff;
+                font-size: 1ch;
+            }
+
+            * {
+                text-align: center;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            div {
+                color: rgb(0, 0, 0);
+                font-weight: 100;
+                letter-spacing: 3px;
+                font-size: 1rem;
+            }
+            h1 {
+                color: rgb(0, 0, 0);
+                font-weight: 100;
+                letter-spacing: 3px;
+                font-size: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>가왕</h1>
+
+        <table border="2" width="600px" height="250px" cellspacing="5px" cellpadding="20px">
+            <tr>
+                <td id="test">
+                    4번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td></td>
+                <td>
+                    5번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td>
+                    6번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td>
+                    7번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td></td>
+                <td>
+                    8번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    9번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td>
+                    <input
+                        type="text"
+                        style="width: 34px; border-top: none; border-right: none; border-left: none"
+                        title="대기번호 입력"
+                    />
+                    <input type="text" style="width: 34px; border: none" title="대기번호 입력" />
+                </td>
+                <td>
+                    18번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td>
+                    19번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td>
+                    20번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td></td>
+                <td>
+                    10번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td>
+                    <input
+                        type="text"
+                        style="width: 34px; border-top: none; border-right: none; border-left: none"
+                        title="대기번호 입력"
+                    />
+                    <input type="text" style="width: 34px; border: none" title="대기번호 입력" />
+                </td>
+                <td>
+                    17번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td>
+                    16번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td>
+                    15번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td></td>
+                <td>
+                    11번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    12번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th rowspan="2">카운터</th>
+                <td>
+                    <input
+                        type="text"
+                        style="width: 34px; border-top: none; border-right: none; border-left: none"
+                        title="대기번호 입력"
+                    />
+                    <input type="text" style="width: 34px; border: none" title="대기번호 입력" />
+                </td>
+                <td>
+                    <input
+                        type="text"
+                        style="width: 34px; border-top: none; border-right: none; border-left: none"
+                        title="대기번호 입력"
+                    />
+                    <input type="text" style="width: 34px; border: none" title="대기번호 입력" />
+                </td>
+                <td rowspan="2">
+                    23번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td>
+                    22번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td></td>
+                <td>
+                    13번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    21번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+                <td></td>
+                <td>
+                    14번방
+                    <table border="1" cellpadding="9px" class="room">
+                        <tr></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        버튼 의미
+
+                        <table border="1" cellpadding="5px" class="room">
+                            <tr>
+                                <td>
+                                    <input
+                                        type="text"
+                                        placeholder="테이블 손걸레"
+                                        style="width: 100px"
+                                        title="청소 & 청소년 확인 등에 사용하세요"
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        type="text"
+                                        placeholder="방 쓸기(청소기)"
+                                        style="width: 100px"
+                                        title="청소 & 청소년 확인 등에 사용하세요"
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        type="text"
+                                        placeholder="대걸레 & 껌칼"
+                                        style="width: 100px"
+                                        title="청소 & 청소년 확인 등에 사용하세요"
+                                    />
+                                </td>
+                                <!-- <td><input type="text" style="width: 100px" /></td> -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="padding-bottom: 30px" hidden="true">
+            <span>방 옵션 수</span>
+            <form>
+                <input type="number" id="selectRoomOption" value="3" />
+            </form>
+        </div>
+        <div style="padding-bottom: 30px">
+            <span>색상 선택</span>
+            <form>
+                <input type="color" id="selectColor" value="#AFEEC2" />
+            </form>
+            <span id="colorPannel"></span>
+        </div>
+        <div>
+            <a target="_blank" href="./간편지폐계산기.html">간편지폐계산</a>
+        </div>
+        <footer>
+            <p></p>
+            <script>
+                let footer$ = document.querySelector('footer');
+                footer$.addEventListener('click', (event) => {
+                    footer$.querySelector('p').innerText = '@ 2021 YoungJae';
+                });
+            </script>
+        </footer>
+    </body>
+    <script>
+        let roomtr$ = document.querySelectorAll('.room tr');
+        let roomOption$ = document.querySelector('#selectRoomOption');
+        let room$ = document.querySelectorAll('.room td');
+        let color$ = document.querySelector('#selectColor');
+
+        let color = '#AFEEC2';
+        let roomOption = roomOption$.value;
+
+        // 초기 td 생성 ,roomOption 만큼
+        for (let i = 0; i < roomtr$.length - 1; i++) {
+            for (let j = 0; j < roomOption; j++) {
+                roomtr$[i].appendChild(document.createElement('td'));
+            }
+        }
+        room$ = document.querySelectorAll('.room td');
+
+        // 색상버튼 테이블에 옵션 수 만큼 td 생성
+        // roomOption$.addEventListener('submit', (event) => {
+        //     event.preventDefault();
+        //     let number$ = document.querySelector('#number');
+        //     let number = number$.value;
+        //     for (let i = 0; i < roomtr$.length - 1; i++) {
+        //         for (let j = 0; j < number; j++) {
+        //             roomtr$[i].appendChild(document.createElement('td'));
+        //         }
+        //     }
+        //     room$ = document.querySelectorAll('.room td');
+        // });
+
+        // 색상 선택 이벤트
+        let colorPannel$ = document.querySelector('#colorPannel');
+
+        // let count = 1;
+        color$.addEventListener('change', (event) => {
+            color = event.target.value;
+            // let log = `${color} 색상이 ${count}번 째로 선택되었습니다.`;
+            // count++;
+            // let span_ = document.createElement('span');
+            btn_ = document.createElement('button');
+            btn_.setAttribute('style', `background-color: ${color}; padding: 10px`);
+            btn_.setAttribute('class', `${color}`);
+            // span_.innerText = log;
+            // colorPannel$.appendChild(span_);
+            colorPannel$.appendChild(btn_);
+            btn_.addEventListener('click', (event) => {
+                color = event.target.getAttribute('class');
+                color$.value = color;
+            });
+        });
+
+        // let test$ = document.querySelector('#test');
+        // 기본으로 td 생성
+        // let td = document.createElement('td');
+        // let tr = document.createElement('tr');
+        // tr.appendChild(document.createElement('td'));
+        // // border="1" cellpadding="7px"
+        // let table = document.createElement('table');
+        // table.setAttribute('id', 'room');
+        // table.setAttribute('border', '1');
+        // table.setAttribute('cellpadding', '7px');
+        // table.appendChild(tr);
+        // test$.appendChild(table);
+
+        // 색상 부여
+        for (let i = 0; i < room$.length; i++) {
+            room$[i].addEventListener('click', function (event) {
+                if (room$[i].getAttribute('bgcolor', color)) {
+                    room$[i].setAttribute('bgcolor', '');
+                } else {
+                    room$[i].setAttribute('bgcolor', color);
+                }
+            });
+        }
+    </script>
+</html>

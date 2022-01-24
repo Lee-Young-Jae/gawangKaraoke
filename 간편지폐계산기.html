@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Calculator</title>
+        <style>
+            #centerSort {
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 0px 0px;
+                top: 1%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 90%;
+                text-align: center;
+            }
+
+            .hidden {
+                display: none;
+            }
+            div {
+                color: rgb(0, 0, 0);
+                font-weight: 100;
+                letter-spacing: 3px;
+                font-size: 1rem;
+            }
+            button {
+                width: 100px;
+                height: 40px;
+                border-radius: 30px;
+                border: none;
+                background-color: rgba(255, 255, 255, 0.6);
+                color: rgb(80, 80, 80);
+                font-size: 1rem;
+                font-weight: 600;
+                box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+                outline: none;
+                cursor: pointer;
+                transition: all, 3s;
+            }
+
+            input {
+                text-align: center;
+                color: white;
+                font-size: 1.1rem;
+                padding: 10px;
+                width: 240px;
+                background-color: rgba(255, 255, 255, 0.2);
+                border: none;
+            }
+
+            #resultModal {
+                /* background-color:rgba(253, 253, 253, 0.322); */
+                font-size: 200%;
+                margin-bottom: 200px;
+            }
+
+            @-webkit-keyframes sparkle {
+                from {
+                    background-position: 0% 100%;
+                }
+                to {
+                    background-position: 200% 100%;
+                }
+            }
+
+            @keyframes sparkle {
+                from {
+                    background-position: 0% 100%;
+                }
+                to {
+                    background-position: 200% 100%;
+                }
+            }
+            .test {
+                /* background: white; */
+                display: inline-block;
+                padding: 1em;
+                font-family: Helvetica Neue;
+                border-radius: 4px;
+                position: relative;
+            }
+            .test:before {
+                -webkit-animation: sparkle 4s infinite linear;
+                animation: sparkle 4s infinite linear;
+                background: linear-gradient(
+                    90deg,
+                    #ffffff 0%,
+                    #dddbbf 11%,
+                    #ffffff 22%,
+                    #ffffff 33%,
+                    #fff8ab 44%,
+                    #ffffff 55%,
+                    #b4d4c6 66%,
+                    #fffeee 77%,
+                    #ffffff 88%,
+                    #ffffff 100%
+                );
+                background-size: 300% 100%;
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+                filter: blur(3px);
+                z-index: -1;
+                transform: scale(0.99) translateY(3px);
+            }
+
+            a {
+                font-size: 2px;
+                color: #9cb4a8b2;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="centerSort">
+            <h1>가왕 지폐 간단 계산기</h1>
+
+            <form>
+                <div id="won-50000">
+                    <p>50,000 원</p>
+                    <input type="number" id="count" value="0" min="0" />
+                </div>
+                <div id="won-10000">
+                    <p>10,000 원</p>
+                    <input type="number" id="count" value="20" min="0" />
+                </div>
+                <div id="won-5000">
+                    <p>5,000 원</p>
+                    <input type="number" id="count" value="8" min="0" />
+                </div>
+                <div id="won-1000">
+                    <p>1,000 원</p>
+                    <input type="number" id="count" value="9" min="0" />
+                </div>
+                <div id="won-500">
+                    <p>500 원</p>
+                    <input type="number" id="count" value="2" min="0" />
+                </div>
+                <div id="won-100">
+                    <p>100 원</p>
+                    <input type="number" id="count" value="0" min="0" />
+                </div>
+
+                <div id="submit-cal" style="margin-top: 50px">
+                    <button>계산하기</button>
+                </div>
+            </form>
+
+            <div class="hidden test" id="resultModal">
+                <input style="text-align: center" readonly id="result" />
+            </div>
+            <br />
+            <a href="https://www.google.com/">designed by Young Jae</a>
+        </div>
+
+        <script>
+            const $won_50000 = document.querySelector('div #won-50000 input');
+            const $won_10000 = document.querySelector('div #won-10000 input');
+            const $won_5000 = document.querySelector('div #won-5000 input');
+            const $won_1000 = document.querySelector('div #won-1000 input');
+            const $won_500 = document.querySelector('div #won-500 input');
+            const $won_100 = document.querySelector('div #won-100 input');
+
+            const $calculate = document.querySelector('div #submit-cal');
+            const $result = document.querySelector('#resultModal');
+            const $form = document.querySelector('form');
+
+            $form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const resultWon =
+                    parseInt($won_50000.value * 50000) +
+                    parseInt($won_10000.value * 10000) +
+                    parseInt($won_5000.value * 5000) +
+                    parseInt($won_1000.value * 1000) +
+                    parseInt($won_500.value * 500) +
+                    parseInt($won_100.value * 100);
+                $result.querySelector('input').value =
+                    String(resultWon).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',') + ' 원';
+                $result.classList.remove('hidden');
+            });
+
+            // $calculate.addEventListener("click", ()=>{
+            //     const resultWon = parseInt($won_50000.value * 50000) + parseInt($won_10000.value * 10000) + parseInt($won_5000.value * 5000) + parseInt($won_1000.value * 1000) + parseInt($won_500.value * 500) + parseInt($won_100.value * 100);
+            //     $result.querySelector("input").value = String(resultWon).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + "원";
+            //     $result.classList.remove("hidden");
+
+            // })
+        </script>
+    </body>
+</html>
